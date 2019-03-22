@@ -1,0 +1,7 @@
+.idea/*
+out
+build
+.idea/vcs.xml
+gradlew.bat
+.gradle
+settings.gradle

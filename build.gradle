@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+group 'dnagar'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
+    baseName = 'all-in-one-jar'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'Main'
+        )
+    }
+}
+
+dependencies {
+    compile 'io.dropwizard:dropwizard-core:1.1.1'
+    compile 'io.micrometer:micrometer-registry-prometheus:latest.release'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'io.prometheus',name:'simpleclient',version:'0.6.0'
+    compile group: 'io.prometheus',name:'simpleclient_httpserver',version:'0.6.0'
+}
