@@ -6,7 +6,7 @@ public class PrometheusTest {
 
     @Test
     public void testInt() {
-        assertEquals(0,0);
+        assertEquals(0,1);
     }
 
     @Test
