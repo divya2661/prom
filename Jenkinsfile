@@ -1,9 +1,15 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'test'
+    }
+
+  }
   stages {
     stage('Test') {
       steps {
-        sh 'gradle build'
+        sh '''sudo apt-get -y install gradle
+gradle build'''
       }
     }
   }
