@@ -5,3 +5,4 @@ build
 gradlew.bat
 .gradle
 settings.gradle
+ignore
