@@ -17,4 +17,4 @@ Once this is done go to `http://localhost:8080/metrics` to see the data
 the `test_counter_total` will increase whenever you refresh `http://localhost:8080/hello`
 
 Now you have the basic java application up and running with micrometer integration.
-
+You can give the `metrics` url to prometheus.
